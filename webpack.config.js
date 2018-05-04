@@ -1,7 +1,6 @@
-const { VueLoaderPlugin } = require('vue-loader');
-const path = require('path');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader'),
+      path = require('path'),
+      HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
