@@ -1,10 +1,11 @@
 // load Vue library
 import Vue from 'vue';
 
-// load App component
-import App from './App';
+// load components
+import App from './components/App';
 
-console.log(App);
+// register components
+Vue.component('App', App);
 
 // disable dev msg
 Vue.config.productionTip = false;
@@ -12,6 +13,5 @@ Vue.config.productionTip = false;
 // launch App
 new Vue({
   el: 'main',
-  components: { App },
-  template: '<App></App>',
+  template: '<app></app>',
 });
