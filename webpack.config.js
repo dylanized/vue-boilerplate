@@ -76,7 +76,7 @@ const config = {
     new VueLoaderPlugin(),
     // index.html loader
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'static', 'index.html'),
+      template: path.join(__dirname, 'src', 'index.html'),
       filename: path.join(__dirname, 'dist', 'index.html'),
       inject: true,
     }),
