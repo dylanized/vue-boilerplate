@@ -1,18 +1,35 @@
-const { VueLoaderPlugin } = require('vue-loader'),
-      path = require('path'),
+const path = require('path'),
+      { VueLoaderPlugin } = require('vue-loader'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
 
+// if development, set sourceMap to true, else false
+const sourceMap = (env === 'development');
+
+// build config
 const config = {
-  // basic settings
-  entry: path.join(__dirname, 'src', 'main.js'),
+  // set mode
   mode: env,
+  // set entry and output
+  entry: path.join(__dirname, 'src', 'main.js'),
   output: {
     publicPath: '/',
   },
-  // required settings
+  resolve: {
+    // set extensions to load
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      // set alias for vue with template compiler
+      'vue$': 'vue/dist/vue.esm.js',
+      // set src alias
+      '@': path.join(__dirname, '..', 'src'),
+    },
+  },
+  // if sourcemap enabled, set devtool, else leave it undefined
+  devtool: (sourceMap ? 'cheap-module-eval-source-map' : undefined),
+  // set required settings
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -21,25 +38,33 @@ const config = {
   // set handling for file types
   module: {
     rules: [
-      // .vue
+      // configure .vue loading
       {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
-      // .js
+      // configure .js loading
       {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [path.join(__dirname, 'src')],
       },
-      // .scss
+      // configure .scss loading
       {
         test: /\.scss$/,
         use: [
           'vue-style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap,
+            },
+          },
           {
             loader: 'sass-loader',
+            options: {
+              sourceMap,
+            },
           },
         ],
       },
