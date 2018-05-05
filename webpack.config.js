@@ -1,6 +1,7 @@
 const path = require('path'),
       { VueLoaderPlugin } = require('vue-loader'),
-      HtmlWebpackPlugin = require('html-webpack-plugin');
+      HtmlWebpackPlugin = require('html-webpack-plugin'),
+      CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
@@ -72,14 +73,19 @@ const config = {
   },
   // load plugins
   plugins: [
-    // vue loader
+    // load vue loader
     new VueLoaderPlugin(),
-    // index.html loader
+    // load html loader, set it to process index.html
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       filename: path.join(__dirname, 'dist', 'index.html'),
       inject: true,
     }),
+    // load copy plugin, set it to copy img folder
+    new CopyWebpackPlugin([{
+      from: 'src/img',
+      to: 'img'
+    }]),
   ],
 };
 
