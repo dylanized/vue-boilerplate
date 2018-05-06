@@ -1,11 +1,11 @@
 <template>
   <div id='app'>
-    <app-header></app-header>
+    <app-header title='Vue.js Boilerplate'></app-header>
     <div>
-      <app-sidebar></app-sidebar>
+      <app-sidebar :links='locals.links'></app-sidebar>
       <router-view></router-view>
     </div>
-    <app-footer></app-footer>
+    <app-footer><p>Powered by Vue.js</p></app-footer>
   </div>
 </template>
 
@@ -21,5 +21,6 @@ export default {
     AppSidebar,
     AppFooter,
   },
+  props: [ 'locals' ],
 };
 </script>

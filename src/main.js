@@ -34,9 +34,21 @@ const router = new VueRouter({
   ],
 });
 
+// build locals
+const locals = {
+  links: [
+    { to: '/', text: 'Home' },
+    { to: '/about', text: 'About' },
+    { to: '/error', text: 'Error' },
+  ],
+};
+
 // launch App
 new Vue({
   router,
   components: { App },
-  template: '<app></app>',
+  template: '<app :locals="locals"></app>',
+  data() {
+    return { locals };
+  },
 }).$mount('#app');
