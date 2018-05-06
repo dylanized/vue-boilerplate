@@ -38,4 +38,4 @@ const router = new VueRouter({
 new Vue({
   router,
   template: '<app></app>',
-}).$mount('main');
+}).$mount('#app');
