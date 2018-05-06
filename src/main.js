@@ -4,17 +4,11 @@ import VueRouter from 'vue-router';
 // disable dev msg
 Vue.config.productionTip = false;
 
-// load components
+// load global components
 import App from './inc/layout/App';
-import AppHeader from './inc/layout/AppHeader';
-import AppSidebar from './inc/layout/AppSidebar';
-import AppFooter from './inc/layout/AppFooter';
 
-// register components
+// register global components
 Vue.component('App', App);
-Vue.component('AppHeader', AppHeader);
-Vue.component('AppSidebar', AppSidebar);
-Vue.component('AppFooter', AppFooter);
 
 // load pages
 import HomePage from './inc/pages/HomePage';
@@ -43,5 +37,6 @@ const router = new VueRouter({
 // launch App
 new Vue({
   router,
+  components: { App },
   template: '<app></app>',
 }).$mount('#app');
