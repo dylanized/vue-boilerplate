@@ -81,11 +81,19 @@ const config = {
       filename: path.join(__dirname, 'dist', 'index.html'),
       inject: true,
     }),
-    // load copy plugin, set it to copy img folder
-    new CopyWebpackPlugin([{
-      from: 'src/img',
-      to: 'img'
-    }]),
+    // load copy plugin
+    new CopyWebpackPlugin([
+      // set it to copy img folder
+      {
+        from: 'src/img',
+        to: 'img',
+      },
+      // set it to copy lib folder
+      {
+        from: 'src/lib',
+        to: 'lib',
+      },
+    ]),
   ],
 };
 
