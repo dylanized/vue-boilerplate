@@ -16,6 +16,7 @@ const config = {
   // set entry and output
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
+    filename: '[name].[chunkhash].js',
     publicPath: '/',
   },
   resolve: {
@@ -89,6 +90,7 @@ const config = {
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       },
+      chunksSortMode: 'none',
     }),
     // load copy plugin
     new CopyWebpackPlugin([
