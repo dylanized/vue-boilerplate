@@ -30,6 +30,10 @@ const config = {
   },
   // if sourcemap enabled, set devtool, else leave it undefined
   devtool: (sourceMap ? 'cheap-module-eval-source-map' : undefined),
+  // configure dev server
+  devServer: {
+    contentBase: './src',
+  },
   // set required settings
   optimization: {
     splitChunks: {
@@ -87,11 +91,13 @@ const config = {
       {
         from: 'src/img',
         to: 'img',
+        ignore: ['.*'],
       },
       // set it to copy lib folder
       {
         from: 'src/lib',
         to: 'lib',
+        ignore: ['.*'],
       },
     ]),
   ],
