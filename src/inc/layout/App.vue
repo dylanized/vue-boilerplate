@@ -1,20 +1,11 @@
 <template>
   <div id='app'>
-    <header>
-      <h1>Vue Boilerplate</h1>
-      <nav>
-        <ul>
-          <li><router-link to='/'>Home</router-link></li>
-          <li><router-link to='/about'>About</router-link></li>
-          <li><router-link to='/error'>Error</router-link></li>
-        </ul>
-      </nav>
-    </header>
+    <app-header></app-header>
     <div>
-      <aside></aside>
+      <app-sidebar></app-sidebar>
       <router-view></router-view>
     </div>
-    <footer></footer>
+    <app-footer></app-footer>
   </div>
 </template>
 
