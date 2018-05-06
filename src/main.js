@@ -6,9 +6,15 @@ Vue.config.productionTip = false;
 
 // load components
 import App from './inc/layout/App';
+import AppHeader from './inc/layout/AppHeader';
+import AppSidebar from './inc/layout/AppSidebar';
+import AppFooter from './inc/layout/AppFooter';
 
 // register components
 Vue.component('App', App);
+Vue.component('AppHeader', AppHeader);
+Vue.component('AppSidebar', AppSidebar);
+Vue.component('AppFooter', AppFooter);
 
 // load pages
 import HomePage from './inc/pages/HomePage';
