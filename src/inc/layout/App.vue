@@ -1,9 +1,9 @@
 <template>
   <div id='app'>
-    <app-header title='Vue.js Boilerplate'></app-header>
+    <app-header title='Vue.js Boilerplate' />
     <div>
-      <app-sidebar :links='locals.links'></app-sidebar>
-      <router-view></router-view>
+      <app-sidebar :links='locals.links' />
+      <router-view />
     </div>
     <app-footer><p>Powered by Vue.js</p></app-footer>
   </div>
