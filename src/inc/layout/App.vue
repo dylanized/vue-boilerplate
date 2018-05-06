@@ -3,7 +3,9 @@
     <app-header title='Vue.js Boilerplate' />
     <div>
       <app-sidebar :links='locals.links' />
-      <router-view />
+      <main class='col-md-8 col-12 p-1'>
+        <router-view />
+      </main>
     </div>
     <app-footer><p>Powered by Vue.js</p></app-footer>
   </div>
