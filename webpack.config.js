@@ -84,6 +84,11 @@ const config = {
       template: path.join(__dirname, 'src', 'index.html'),
       filename: path.join(__dirname, 'dist', 'index.html'),
       inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
     // load copy plugin
     new CopyWebpackPlugin([
