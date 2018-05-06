@@ -1,25 +1,24 @@
-// load Vue library
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+// disable dev msg
+Vue.config.productionTip = false;
+
 // load components
-import App from './components/App';
+import App from './inc/layout/App';
 
 // register components
 Vue.component('App', App);
 
 // load pages
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ErrorPage from './pages/ErrorPage';
+import HomePage from './inc/pages/HomePage';
+import AboutPage from './inc/pages/AboutPage';
+import ErrorPage from './inc/pages/ErrorPage';
 
 // register pages
 Vue.component('HomePage', HomePage);
 Vue.component('AboutPage', AboutPage);
 Vue.component('ErrorPage', ErrorPage);
-
-// disable dev msg
-Vue.config.productionTip = false;
 
 // load router middleware
 Vue.use(VueRouter);
