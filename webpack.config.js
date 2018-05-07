@@ -2,7 +2,8 @@ const path = require('path'),
       { VueLoaderPlugin } = require('vue-loader'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
-      CleanWebpackPlugin = require('clean-webpack-plugin');
+      CleanWebpackPlugin = require('clean-webpack-plugin'),
+      MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
@@ -109,5 +110,15 @@ const config = {
     ]),
   ],
 };
+
+// if dev
+if (env !== 'development') {
+  // mount MiniCssExtractor
+  config.plugins.push(new MiniCssExtractPlugin());
+  // cache sassLoader
+  const sassLoader = config.module.rules.find(({ test }) => test.test('.scss'));
+  // replace sassLoader with miniCssExtractor
+  sassLoader.use[0] = MiniCssExtractPlugin.loader;
+}
 
 module.exports = config;
