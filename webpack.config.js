@@ -16,7 +16,7 @@ const config = {
   // set entry and output
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[hash].js',
     publicPath: '/',
   },
   resolve: {
