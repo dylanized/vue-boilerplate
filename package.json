@@ -31,6 +31,7 @@
     "webpack-serve": "^0.3.2"
   },
   "dependencies": {
+    "bootstrap": "^4.1.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   }
