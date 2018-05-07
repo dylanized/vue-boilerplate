@@ -1,7 +1,8 @@
 const path = require('path'),
       { VueLoaderPlugin } = require('vue-loader'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
-      CopyWebpackPlugin = require('copy-webpack-plugin');
+      CopyWebpackPlugin = require('copy-webpack-plugin'),
+      CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
@@ -16,8 +17,9 @@ const config = {
   // set entry and output
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
-    filename: 'tmp/[name].[hash].js',
+    filename: '[name].[hash].js',
     publicPath: '/',
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     // set extensions to load
@@ -78,6 +80,8 @@ const config = {
   },
   // load plugins
   plugins: [
+    // clean dist folder
+    new CleanWebpackPlugin(['dist']),
     // load vue loader
     new VueLoaderPlugin(),
     // load html loader, set it to process index.html
