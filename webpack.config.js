@@ -16,7 +16,7 @@ const config = {
   // set entry and output
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
-    filename: '[name].[hash].js',
+    filename: 'tmp/[name].[hash].js',
     publicPath: '/',
   },
   resolve: {
