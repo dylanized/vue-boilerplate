@@ -23,6 +23,11 @@ export default {
     AppSidebar,
     AppFooter,
   },
-  props: [ 'locals' ],
+  props: ['locals'],
 };
 </script>
+
+<style lang="scss">
+// import bootstrap css
+@import './node_modules/bootstrap/scss/bootstrap.scss';
+</style>
