@@ -19,7 +19,7 @@ const config = {
   output: {
     filename: '[name].[hash].js',
     publicPath: '/',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist', 'tmp'),
   },
   resolve: {
     // set extensions to load
@@ -101,13 +101,13 @@ const config = {
       // set it to copy img folder
       {
         from: 'src/img',
-        to: 'img',
+        to: '../img',
         ignore: ['.*'],
       },
       // set it to copy lib folder
       {
         from: 'src/lib',
-        to: 'lib',
+        to: '../lib',
         ignore: ['.*'],
       },
     ]),
