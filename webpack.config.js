@@ -15,7 +15,9 @@ const config = {
   // set mode
   mode: env,
   // set entry and output
-  entry: path.join(__dirname, 'src', 'main.js'),
+  entry: {
+    main: './src/main.js',
+  },
   output: {
     filename: '[name].[hash].js',
     publicPath: '/',
@@ -102,12 +104,6 @@ const config = {
       {
         from: 'src/img',
         to: '../img',
-        ignore: ['.*'],
-      },
-      // set it to copy lib folder
-      {
-        from: 'src/lib',
-        to: '../lib',
         ignore: ['.*'],
       },
     ]),
