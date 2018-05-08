@@ -84,8 +84,6 @@ const config = {
   },
   // load plugins
   plugins: [
-    // clean dist folder
-    new CleanWebpackPlugin(['dist']),
     // load vue loader
     new VueLoaderPlugin(),
     // load html loader, set it to process index.html
@@ -105,6 +103,8 @@ const config = {
 
 // if prod
 if (isProd) {
+  // mount CleanWebpackPlugin to clean dist folder
+  config.plugins.push(new CleanWebpackPlugin(['dist']));
   // mount MiniCssExtractor
   config.plugins.push(new MiniCssExtractPlugin());
   // cache sassLoader
