@@ -20,9 +20,9 @@ const config = {
     main: './src/main.js',
   },
   output: {
-    filename: '[name].[hash].js',
+    filename: 'tmp/[name].[hash].js',
     publicPath: '/',
-    path: path.resolve(__dirname, 'dist', 'tmp'),
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     // set extensions to load
