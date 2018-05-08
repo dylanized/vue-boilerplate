@@ -10,6 +10,7 @@ const env = process.env.NODE_ENV;
 
 // set isProd conditional
 const isProd = (env === 'production');
+const isDev = !isProd;
 
 // build config
 const config = {
@@ -35,7 +36,7 @@ const config = {
     },
   },
   // if not prod, set devtool, else leave it undefined
-  devtool: (!isProd ? 'cheap-module-eval-source-map' : undefined),
+  devtool: (isDev ? 'cheap-module-eval-source-map' : undefined),
   // configure dev server
   devServer: {
     contentBase: './src',
@@ -68,13 +69,13 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: !isProd,
+              sourceMap: isDev,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: !isProd,
+              sourceMap: isDev,
             },
           },
         ],
