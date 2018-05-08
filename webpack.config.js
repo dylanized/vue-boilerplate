@@ -8,6 +8,9 @@ const path = require('path'),
 // cache env
 const env = process.env.NODE_ENV;
 
+// set isProd conditional
+const isProd = (env === 'production');
+
 // if development, set sourceMap to true, else false
 const sourceMap = (env === 'development');
 
@@ -34,8 +37,8 @@ const config = {
       '@': path.join(__dirname, '..', 'src'),
     },
   },
-  // if sourcemap enabled, set devtool, else leave it undefined
-  devtool: (sourceMap ? 'cheap-module-eval-source-map' : undefined),
+  // if not prod, set devtool, else leave it undefined
+  devtool: (!isProd ? 'cheap-module-eval-source-map' : undefined),
   // configure dev server
   devServer: {
     contentBase: './src',
@@ -68,13 +71,13 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap,
+              sourceMap: !isProd,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap,
+              sourceMap: !isProd,
             },
           },
         ],
@@ -111,8 +114,8 @@ const config = {
   ],
 };
 
-// if dev
-if (env !== 'development') {
+// if prod
+if (isProd) {
   // mount MiniCssExtractor
   config.plugins.push(new MiniCssExtractPlugin());
   // cache sassLoader
