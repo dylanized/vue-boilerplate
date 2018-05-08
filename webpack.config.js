@@ -102,15 +102,6 @@ const config = {
       },
       chunksSortMode: 'none',
     }),
-    // load copy plugin
-    new CopyWebpackPlugin([
-      // set it to copy img folder
-      {
-        from: 'src/img',
-        to: '../img',
-        ignore: ['.*'],
-      },
-    ]),
   ],
 };
 
@@ -122,6 +113,14 @@ if (isProd) {
   const sassLoader = config.module.rules.find(({ test }) => test.test('.scss'));
   // replace sassLoader with miniCssExtractor
   sassLoader.use[0] = MiniCssExtractPlugin.loader;
+  // load copy plugin and set it to copy img folder
+  config.plugins.push(new CopyWebpackPlugin([
+    {
+      from: 'src/img',
+      to: '../img',
+      ignore: ['.*'],
+    },
+  ]));
 }
 
 module.exports = config;
