@@ -11,9 +11,6 @@ const env = process.env.NODE_ENV;
 // set isProd conditional
 const isProd = (env === 'production');
 
-// if development, set sourceMap to true, else false
-const sourceMap = (env === 'development');
-
 // build config
 const config = {
   // set mode
