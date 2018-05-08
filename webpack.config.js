@@ -8,9 +8,9 @@ const path = require('path'),
 // cache env
 const env = process.env.NODE_ENV;
 
-// set isProd conditional
-const isProd = (env === 'production');
-const isDev = !isProd;
+// set env conditionals
+const isProd = (env === 'production'),
+      isDev = !isProd;
 
 // build config
 const config = {
