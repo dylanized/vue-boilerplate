@@ -107,8 +107,8 @@ if (isProd) {
   config.plugins.push(new CleanWebpackPlugin(['dist']));
   // mount MiniCssExtractor
   config.plugins.push(new MiniCssExtractPlugin({
-    filename: '[name].[chunkhash].css',
-    chunkFilename: '[id].[chunkhash].css',
+    filename: 'tmp/[name].[chunkhash].css',
+    chunkFilename: 'tmp/[id].[chunkhash].css',
   }));
   // cache sassLoader
   const sassLoader = config.module.rules.find(({ test }) => test.test('.scss'));
