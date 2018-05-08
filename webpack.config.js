@@ -115,7 +115,7 @@ if (isProd) {
   config.plugins.push(new CopyWebpackPlugin([
     {
       from: 'src/img',
-      to: '../img',
+      to: 'img',
       ignore: ['.*'],
     },
   ]));
