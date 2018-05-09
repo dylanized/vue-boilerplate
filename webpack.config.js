@@ -21,7 +21,7 @@ const config = {
     main: './src/main.js',
   },
   output: {
-    filename: 'tmp/[name].[chunkhash].js',
+    filename: 'tmp/[name].[hash].js',
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
   },
@@ -108,7 +108,6 @@ if (isProd) {
   // mount MiniCssExtractor
   config.plugins.push(new MiniCssExtractPlugin({
     filename: 'tmp/[name].[chunkhash].css',
-    chunkFilename: 'tmp/[id].[chunkhash].css',
   }));
   // cache sassLoader
   const sassLoader = config.module.rules.find(({ test }) => test.test('.scss'));

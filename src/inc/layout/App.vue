@@ -28,6 +28,6 @@ export default {
 </script>
 
 <style lang='scss'>
-// import bootstrap css
-@import './node_modules/bootstrap/scss/bootstrap.scss';
+// import custom css
+@import './src/css/app.scss';
 </style>
