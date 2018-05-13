@@ -37,10 +37,6 @@ const config = {
   },
   // if not prod, set devtool, else leave it undefined
   devtool: (isDev ? 'cheap-module-eval-source-map' : undefined),
-  // configure dev server
-  devServer: {
-    contentBase: './src',
-  },
   // set required settings
   optimization: {
     splitChunks: {
