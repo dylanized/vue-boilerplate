@@ -122,6 +122,11 @@ if (isProd) {
       to: 'img',
       ignore: ['.*'],
     },
+    {
+      from: 'src/lib',
+      to: 'lib',
+      ignore: ['.*'],
+    },
   ]));
 }
 
