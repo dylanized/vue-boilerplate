@@ -1,5 +1,5 @@
 <template>
-  <footer class='col-12 p-1'>
+  <footer class='navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark'>
     <slot></slot>
   </footer>
 </template>

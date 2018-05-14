@@ -1,13 +1,27 @@
 <template>
-  <div id='app'>
-    <app-header title='Vue.js Boilerplate' />
-    <div>
-      <app-sidebar :links='locals.links' />
-      <main class='col-md-8 col-12 p-1'>
-        <router-view />
-      </main>
-    </div>
-    <app-footer><p>Powered by Vue.js</p></app-footer>
+  <div>
+
+    <nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
+      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+
+      <div class='collapse navbar-collapse' id='navbarsExampleDefault'>
+        <app-sidebar :links='locals.links' />
+      </div>
+    </nav>
+
+    <main role='main' class='container pt-5'>
+      <div class='starter-template'>
+        <app-header title='Vue.js Boilerplate' />
+        <p class='lead'>Simple starter project showing off Vue.js, Webpack 4 and Bootstrap 4</p>
+      </div>
+
+      <router-view />
+
+      <app-footer><p class='navbar-brand mb-0'>Powered by Vue.js</p></app-footer>
+    </main>
+
   </div>
 </template>
 
