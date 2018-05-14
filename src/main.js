@@ -15,11 +15,6 @@ import HomePage from './inc/pages/HomePage';
 import AboutPage from './inc/pages/AboutPage';
 import ErrorPage from './inc/pages/ErrorPage';
 
-// register pages
-Vue.component('HomePage', HomePage);
-Vue.component('AboutPage', AboutPage);
-Vue.component('ErrorPage', ErrorPage);
-
 // load router middleware
 Vue.use(VueRouter);
 
@@ -46,7 +41,6 @@ const locals = {
 // launch App
 new Vue({
   router,
-  components: { App },
   template: '<app :locals="locals"></app>',
   data() {
     return { locals };
