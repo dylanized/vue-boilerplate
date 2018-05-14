@@ -3,7 +3,9 @@ const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
       CleanWebpackPlugin = require('clean-webpack-plugin'),
-      MiniCssExtractPlugin = require('mini-css-extract-plugin');
+      MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+      OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
+      UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
@@ -88,16 +90,20 @@ const config = {
   plugins: [
     // load vue loader
     new VueLoaderPlugin(),
-    // load html loader, set it to process index.html
+    // load html loader
     new HtmlWebpackPlugin({
+      // set it to process index.html
       template: path.join(__dirname, 'src', 'index.html'),
       filename: path.join(__dirname, 'dist', 'index.html'),
+      // set it to inject asset tags
       inject: true,
-      minify: {
+      // if prod, minify html, else dont
+      minify: isProd ? {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
-      },
+      } : false,
+      // dont re-sort assets
       chunksSortMode: 'none',
     }),
   ],
