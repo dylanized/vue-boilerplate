@@ -11,9 +11,7 @@ import App from './inc/layout/App';
 Vue.component('App', App);
 
 // load pages
-import HomePage from './inc/pages/HomePage';
-import AboutPage from './inc/pages/AboutPage';
-import ErrorPage from './inc/pages/ErrorPage';
+import pages from './main-pages.js';
 
 // load router middleware
 Vue.use(VueRouter);
@@ -23,9 +21,9 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    { path: '/', component: HomePage },
-    { path: '/about', component: AboutPage },
-    { path: '*', component: ErrorPage },
+    { path: '/', component: pages.home },
+    { path: '/about', component: pages.about },
+    { path: '*', component: pages.error },
   ],
 });
 
