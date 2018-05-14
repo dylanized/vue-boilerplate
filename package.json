@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "// START TASKS //": "",
-    "build": "cross-env NODE_ENV=production webpack",
-    "prod": "quick-static ./dist 9000",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --content-base ./src --history-api-fallback",
+    "build": "run NODE_ENV=production webpack",
+    "prod": "run quick-static ./dist 9000",
+    "start": "run NODE_ENV=development webpack-dev-server --content-base ./src --history-api-fallback",
     "// COPY LIBS //": "",
     "copy": "run-s copy:*",
-    "copy:bootstrap": "cp -R node_modules/bootstrap/dist/css/bootstrap.min.css src/lib/css",
-    "copy:vue": "cp -R node_modules/vue/dist/vue.min.js src/lib/js",
-    "copy:router": "cp -R node_modules/vue-router/dist/vue-router.min.js src/lib/js"
+    "copy:bootstrap": "run cp -R node_modules/bootstrap/dist/css/bootstrap.min.css src/lib/css",
+    "copy:vue": "run cp -R node_modules/vue/dist/vue.min.js src/lib/js",
+    "copy:router": "run cp -R node_modules/vue-router/dist/vue-router.min.js src/lib/js"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +24,6 @@
     "bootstrap": "^4.0.0-beta.3",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
-    "cross-env": "^5.1.4",
     "cross-run": "^1.0.1",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
