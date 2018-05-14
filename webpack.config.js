@@ -121,13 +121,25 @@ if (isProd) {
   const sassLoader = config.module.rules.find(({ test }) => test.test('.scss'));
   // replace sassLoader with miniCssExtractor
   sassLoader.use[0] = MiniCssExtractPlugin.loader;
-  // load copy plugin and set it to copy img folder
+  // manually configure minimizer
+  config.optimization.minimizer = [
+    // load css minimizer
+    new OptimizeCSSAssetsPlugin(),
+    // load js minimizer
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+    }),
+  ];
+  // load copy plugin
   config.plugins.push(new CopyWebpackPlugin([
+    // copy img folder
     {
       from: 'src/img',
       to: 'img',
       ignore: ['.*'],
     },
+    // copy lib folder
     {
       from: 'src/lib',
       to: 'lib',
