@@ -16,17 +16,20 @@ const isProd = (env === 'production'),
 
 // build config
 const config = {
-  // set mode
+  // set mode based on env
   mode: env,
-  // set entry
+  // set main app entry
   entry: {
     main: './src/main.js',
   },
-  // set output
+  // configure output
   output: {
-    filename: 'tmp/[name].[hash:5].js',
-    publicPath: '/',
+    // set output directory
     path: path.resolve(__dirname, 'dist'),
+    // set bundle path and filename
+    filename: 'tmp/[name].[hash:5].js',
+    // set asset base
+    publicPath: '/',
   },
   // set external module aliases
   externals: {
@@ -46,10 +49,11 @@ const config = {
   },
   // if not prod, set devtool, else leave it undefined
   devtool: (isDev ? 'cheap-module-eval-source-map' : undefined),
-  // set required settings
+  // configure chunking cache groups
   optimization: {
     splitChunks: {
       cacheGroups: {
+        // extract vendor chunks into vendor group
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
@@ -58,7 +62,7 @@ const config = {
       },
     },
   },
-  // set handling for file types
+  // configure handling for file types
   module: {
     rules: [
       // configure .vue loading
