@@ -17,7 +17,7 @@ const config = {
   mode: process.env.NODE_ENV,
   // set main app entry
   entry: {
-    main: './src/main.js',
+    main: './src/js/main.js',
   },
   // configure output
   output: {
@@ -40,8 +40,10 @@ const config = {
     alias: {
       // set alias for vue with template compiler
       'vue$': 'vue/dist/vue.esm.js',
-      // set src alias
-      '@': path.join(__dirname, '..', 'src'),
+      // set path aliases
+      '@': path.join(__dirname, 'src'),
+      '@inc': path.join(__dirname, 'src/inc'),
+      '@css': path.join(__dirname, 'src/css'),
     },
   },
   // if not prod, set devtool, else leave it undefined
