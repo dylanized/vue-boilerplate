@@ -18,14 +18,21 @@ const isProd = (env === 'production'),
 const config = {
   // set mode
   mode: env,
-  // set entry and output
+  // set entry
   entry: {
     main: './src/main.js',
   },
+  // set output
   output: {
     filename: 'tmp/[name].[hash:5].js',
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
+  },
+  // set external module aliases
+  externals: {
+    'jquery': 'jQuery',
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
   },
   resolve: {
     // set extensions to load
