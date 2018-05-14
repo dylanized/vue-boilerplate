@@ -2,25 +2,21 @@
   <div>
 
     <nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
-      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation'>
-        <span class='navbar-toggler-icon'></span>
-      </button>
-
       <div class='collapse navbar-collapse' id='navbarsExampleDefault'>
         <app-sidebar :links='locals.links' />
       </div>
     </nav>
 
-    <main role='main' class='container pt-5'>
-      <div class='starter-template'>
-        <app-header title='Vue.js Boilerplate' />
-        <p class='lead'>Simple starter project showing off Vue.js, Webpack 4 and Bootstrap 4</p>
-      </div>
+    <div class='starter-template container pt-5'>
+      <app-header title='Vue.js Boilerplate' />
+      <p class='lead'>Simple starter project showing off Vue.js, Webpack 4 and Bootstrap 4</p>
+    </div>
 
+    <div class='container'>
       <router-view />
+    </div>
 
-      <app-footer><p class='navbar-brand mb-0'>Powered by Vue.js</p></app-footer>
-    </main>
+    <app-footer><p class='navbar-brand mb-0'>Powered by Vue.js</p></app-footer>
 
   </div>
 </template>
