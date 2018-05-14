@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack",
     "prod": "quick-static ./dist 9000",
-    "old-start": "cross-env NODE_ENV=development node tools/dev-server.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --content-base ./src --history-api-fallback",
     "// COPY LIBS //": "",
     "copy": "run-s copy:*",
