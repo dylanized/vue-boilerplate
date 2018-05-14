@@ -3,8 +3,7 @@ const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       CopyWebpackPlugin = require('copy-webpack-plugin'),
       CleanWebpackPlugin = require('clean-webpack-plugin'),
-      MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-      ManifestPlugin = require('webpack-manifest-plugin');
+      MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // cache env
 const env = process.env.NODE_ENV;
@@ -100,10 +99,6 @@ const config = {
         removeAttributeQuotes: true,
       },
       chunksSortMode: 'none',
-    }),
-    // export manifest
-    new ManifestPlugin({
-      fileName: 'tmp/manifest.json',
     }),
   ],
 };
