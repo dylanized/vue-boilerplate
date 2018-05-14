@@ -7,17 +7,14 @@ const path = require('path'),
       OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
       UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-// cache env
-const env = process.env.NODE_ENV;
-
 // set env conditionals
-const isProd = (env === 'production'),
+const isProd = (process.env.NODE_ENV === 'production'),
       isDev = !isProd;
 
 // build config
 const config = {
   // set mode based on env
-  mode: env,
+  mode: process.env.NODE_ENV,
   // set main app entry
   entry: {
     main: './src/main.js',
@@ -65,18 +62,18 @@ const config = {
   // configure handling for file types
   module: {
     rules: [
-      // configure .vue loading
+      // .vue loading
       {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
-      // configure .js loading
+      // .js loading
       {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [path.join(__dirname, 'src')],
       },
-      // configure .scss loading
+      // .scss loading
       {
         test: /\.scss$/,
         use: [
