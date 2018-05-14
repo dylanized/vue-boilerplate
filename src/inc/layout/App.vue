@@ -29,5 +29,5 @@ export default {
 
 <style lang='scss'>
 // import custom css
-@import '@css/app.scss';
+@import '@/css/app.scss';
 </style>
