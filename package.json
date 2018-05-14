@@ -50,5 +50,13 @@
     "popper.js": "^1.14.3",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "plugin:vue/essential",
+      "plugin:prettier/recommended",
+      "eslint:recommended"
+    ]
   }
 }
