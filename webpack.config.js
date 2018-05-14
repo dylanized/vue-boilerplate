@@ -30,7 +30,6 @@ const config = {
   },
   // set external module aliases
   externals: {
-    'jquery': 'jQuery',
     'vue': 'Vue',
     'vue-router': 'VueRouter',
   },
