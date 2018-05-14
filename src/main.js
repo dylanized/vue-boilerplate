@@ -1,40 +1,16 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 
 // disable dev msg
 Vue.config.productionTip = false;
 
 // load global components
-import App from './inc/layout/App';
+import './main-inc.js';
 
-// register global components
-Vue.component('App', App);
+// load router
+import router from './main-router.js';
 
-// load pages
-import pages from './main-pages.js';
-
-// load router middleware
-Vue.use(VueRouter);
-
-// instantiate the router and define routes
-const router = new VueRouter({
-  mode: 'history',
-  base: __dirname,
-  routes: [
-    { path: '/', component: pages.home },
-    { path: '/about', component: pages.about },
-    { path: '*', component: pages.error },
-  ],
-});
-
-// build locals
-const locals = {
-  links: [
-    { to: '/', text: 'Home' },
-    { to: '/about', text: 'About' },
-    { to: '/error', text: 'Error' },
-  ],
-};
+// load locals
+import locals from './main-locals.js';
 
 // launch App
 new Vue({
