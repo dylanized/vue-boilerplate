@@ -15,6 +15,7 @@
     "copy:router": "run cp -R node_modules/vue-router/dist/vue-router.min.js src/lib/js",
     "// LINTING //": "",
     "lint": "eslint src",
+    "lint:css": "stylelint src",
     "pretty": "eslint --fix src"
   },
   "author": "",
@@ -70,5 +71,15 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "stylelint": {
+    "processors": ["stylelint-processor-html"],
+    "extends": [
+      "stylelint-config-standard"
+    ],
+    "rules": {
+      "no-empty-source": null
+    },
+    "ignoreFiles": "./src/lib/**"
   }
 }
