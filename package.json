@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "// START TASKS //": "",
+    "// START TASKS //": "",    
+    "start": "run NODE_ENV=development webpack-dev-server --content-base ./src --history-api-fallback",
     "build": "run NODE_ENV=production webpack",
     "prod": "run quick-static ./dist 9000",
-    "start": "run NODE_ENV=development webpack-dev-server --content-base ./src --history-api-fallback",
     "// COPY LIBS //": "",
     "copy": "run-s copy:*",
     "copy:bootstrap": "run cp -R node_modules/bootstrap/dist/css/bootstrap.min.css src/lib/css",
