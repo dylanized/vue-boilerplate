@@ -3,16 +3,16 @@
 
     <app-nav :links='locals.links' />
 
-    <div class='starter-template container pt-5'>
-      <app-header title='Vue.js Boilerplate' />
+    <app-header>
+      <h1>Vue.js Boilerplate</h1>
       <p class='lead'>Simple starter project showing off Vue.js, Webpack 4 and Bootstrap 4</p>
-    </div>
+    </app-header>
 
-    <div class='container'>
+    <section class='container'>
       <router-view />
-    </div>
+    </section>
 
-    <app-footer><p class='navbar-brand mb-0'>Powered by Vue.js</p></app-footer>
+    <app-footer text='Powered by Vue.js' />
 
   </div>
 </template>

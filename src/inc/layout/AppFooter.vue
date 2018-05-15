@@ -1,6 +1,6 @@
 <template>
   <footer class='navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark'>
-    <slot></slot>
+    <p class='navbar-brand mb-0'>{{ text }}</p>
   </footer>
 </template>
 
