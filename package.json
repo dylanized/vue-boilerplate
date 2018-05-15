@@ -66,5 +66,9 @@
   },
   "eslintIgnore": [
     "src/lib"
-  ]
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
 }
