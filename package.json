@@ -14,8 +14,8 @@
     "copy:vue": "run cp -R node_modules/vue/dist/vue.min.js src/lib/js",
     "copy:router": "run cp -R node_modules/vue-router/dist/vue-router.min.js src/lib/js",
     "// LINTING //": "",
-    "lint": "eslint src/js src/inc",
-    "pretty": "eslint --fix src/js"
+    "lint": "eslint src",
+    "pretty": "eslint --fix src"
   },
   "author": "",
   "license": "ISC",
@@ -63,5 +63,8 @@
       "plugin:prettier/recommended",
       "eslint:recommended"
     ]
-  }
+  },
+  "eslintIgnore": [
+    "src/lib"
+  ]
 }
