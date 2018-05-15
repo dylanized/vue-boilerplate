@@ -15,8 +15,8 @@ import locals from './main-locals.js';
 // launch App
 new Vue({
   router,
-  template: '<app :locals="locals"></app>',
   data() {
     return { locals };
   },
+  template: '<app :locals="locals"></app>',
 }).$mount('#app');

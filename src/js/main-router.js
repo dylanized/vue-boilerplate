@@ -10,7 +10,7 @@ import pages from './main-pages.js';
 // instantiate the router and define routes
 const router = new VueRouter({
   mode: 'history',
-  base: __dirname,
+  base: __dirname, // eslint-disable-line
   routes: [
     { path: '/', component: pages.home },
     { path: '/about', component: pages.about },
