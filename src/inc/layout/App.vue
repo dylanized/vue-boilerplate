@@ -1,11 +1,7 @@
 <template>
   <div>
 
-    <nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
-      <div class='collapse navbar-collapse' id='navbarsExampleDefault'>
-        <app-sidebar :links='locals.links' />
-      </div>
-    </nav>
+    <app-nav :links='locals.links' />
 
     <div class='starter-template container pt-5'>
       <app-header title='Vue.js Boilerplate' />
@@ -22,15 +18,15 @@
 </template>
 
 <script>
+import AppNav from './AppNav';
 import AppHeader from './AppHeader';
-import AppSidebar from './AppSidebar';
 import AppFooter from './AppFooter';
 
 export default {
   name: 'App',
   components: {
+    AppNav,
     AppHeader,
-    AppSidebar,
     AppFooter,
   },
   props: ['locals'],
