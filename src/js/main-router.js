@@ -16,6 +16,7 @@ const router = new VueRouter({
     { path: '/about', component: pages.about },
     { path: '*', component: pages.error },
   ],
+  linkActiveClass: 'active',
 });
 
 // export
