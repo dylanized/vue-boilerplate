@@ -18,17 +18,8 @@
 </template>
 
 <script>
-import AppNav from './AppNav';
-import AppHeader from './AppHeader';
-import AppFooter from './AppFooter';
-
 export default {
   name: 'App',
-  components: {
-    AppNav,
-    AppHeader,
-    AppFooter,
-  },
   props: ['locals'],
 };
 </script>
