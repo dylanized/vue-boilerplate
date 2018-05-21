@@ -7,6 +7,6 @@
 <script>
 export default {
   name: 'AppFooter',
-  props: [ 'text' ],
+  props: ['text'],
 };
 </script>

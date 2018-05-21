@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <app-nav :links='locals.links' />
+    <app-nav />
 
     <app-header>
       <h1>Vue.js Boilerplate</h1>
@@ -12,7 +12,7 @@
       <router-view />
     </section>
 
-    <app-footer text='Powered by Vue.js' />
+    <app-footer :text='$store.state.msg' />
 
   </div>
 </template>
@@ -20,7 +20,6 @@
 <script>
 export default {
   name: 'App',
-  props: ['locals'],
 };
 </script>
 

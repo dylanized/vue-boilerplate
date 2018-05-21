@@ -6,23 +6,15 @@ Vue.config.productionTip = false;
 // load global components
 import './main-components.js';
 
+// load store
+import store from './main-store.js';
+
 // load router
 import router from './main-router.js';
 
-// build locals
-const locals = {
-  links: [
-    { to: '/', text: 'Home' },
-    { to: '/about', text: 'About' },
-    { to: '/error', text: 'Error' },
-  ],
-};
-
 // launch App
 new Vue({
+  store,
   router,
-  data() {
-    return { locals };
-  },
-  template: '<app :locals="locals"></app>',
+  template: '<app></app>',
 }).$mount('#app');
