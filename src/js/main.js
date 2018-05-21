@@ -4,7 +4,7 @@ import Vue from 'vue';
 Vue.config.productionTip = false;
 
 // load global components
-import './main-inc.js';
+import './main-components.js';
 
 // load router
 import router from './main-router.js';
